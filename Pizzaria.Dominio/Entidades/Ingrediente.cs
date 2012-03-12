@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-
-namespace Pizzaria.Dominio.Entidades
+﻿namespace Pizzaria.Dominio.Entidades
 {
     public class Ingrediente
     {

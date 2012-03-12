@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
-
-using NHibernate;
 using Pizzaria.Dominio.Entidades;
 using Pizzaria.NHibernate.Helpers;
 
@@ -24,32 +17,41 @@ namespace Pizzaria
             }
         }
 
-        private static int InsertNewPizza()
+        private int InsertNewPizza()
         {
             var provider = new SessionFactoryProvider();
             var sessionProvider = new SessionProvider(provider);
             var sessaoAtual = sessionProvider.GetCurrentSession();
 
-            var pizza = new Pizza {Nome = "Muçarela"};
-            sessaoAtual.Save(pizza);
+            if (Request.Form["Nome"] != null)
+            {
+                string nome = Request.Form["Nome"].ToString();
 
-            var ingrediente1 = new Ingrediente {Nome = "Queijo"};
-            var ingrediente2 = new Ingrediente {Nome = "Oregano"};
-            var ingrediente3 = new Ingrediente {Nome = "Tomate"};
+                var pizza = new Pizza {Nome = nome};
+                sessaoAtual.Save(pizza);
 
-            pizza.AcrescentarIngrediente(ingrediente1);
-            pizza.AcrescentarIngrediente(ingrediente2);
-            pizza.AcrescentarIngrediente(ingrediente3);
+                var ingrediente1 = new Ingrediente { Nome = Request.Form["I1"].ToString() };
+                var ingrediente2 = new Ingrediente { Nome = Request.Form["I2"].ToString() };
+                var ingrediente3 = new Ingrediente { Nome = Request.Form["I3"].ToString() };
 
-            sessaoAtual.Save(ingrediente1);
-            sessaoAtual.Save(ingrediente2);
-            sessaoAtual.Save(ingrediente3);
+                pizza.AcrescentarIngrediente(ingrediente1);
+                pizza.AcrescentarIngrediente(ingrediente2);
+                pizza.AcrescentarIngrediente(ingrediente3);
 
-            sessaoAtual.Clear();
+                sessaoAtual.Save(ingrediente1);
+                sessaoAtual.Save(ingrediente2);
+                sessaoAtual.Save(ingrediente3);
 
-            Pizza p = sessaoAtual.Get<Pizza>(pizza.Id);
+                sessaoAtual.Clear();
 
-            return p.Id;
+                Pizza p = sessaoAtual.Get<Pizza>(pizza.Id);
+
+                return p.Id;
+            }
+            else
+            {
+                return 0;
+            }
         }
     }
 }
