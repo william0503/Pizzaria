@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzaria", "Pizzaria\Pizzaria.csproj", "{158EA77D-598C-4C4B-AC64-5953954F08B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzaria.Dominio", "Pizzaria.Dominio\Pizzaria.Dominio.csproj", "{09D86280-A178-4F55-BE93-D9EEFD7888F3}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pizzaria.NHibernate", "Pizzaria.NHibernate\Pizzaria.NHibernate.csproj", "{29D45F95-6946-4368-B063-7F520C8AA9F5}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Test", "Test", "{47B1946E-B870-4F80-A4D2-16667E4D907C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NHibernateTeste", "NHibernateTeste\NHibernateTeste.csproj", "{19740022-5BE6-4BEE-B33F-9875D2168A34}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{158EA77D-598C-4C4B-AC64-5953954F08B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158EA77D-598C-4C4B-AC64-5953954F08B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158EA77D-598C-4C4B-AC64-5953954F08B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158EA77D-598C-4C4B-AC64-5953954F08B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{09D86280-A178-4F55-BE93-D9EEFD7888F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09D86280-A178-4F55-BE93-D9EEFD7888F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09D86280-A178-4F55-BE93-D9EEFD7888F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09D86280-A178-4F55-BE93-D9EEFD7888F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{29D45F95-6946-4368-B063-7F520C8AA9F5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{29D45F95-6946-4368-B063-7F520C8AA9F5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{29D45F95-6946-4368-B063-7F520C8AA9F5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{29D45F95-6946-4368-B063-7F520C8AA9F5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{19740022-5BE6-4BEE-B33F-9875D2168A34}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{19740022-5BE6-4BEE-B33F-9875D2168A34}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{19740022-5BE6-4BEE-B33F-9875D2168A34}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{19740022-5BE6-4BEE-B33F-9875D2168A34}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{19740022-5BE6-4BEE-B33F-9875D2168A34} = {47B1946E-B870-4F80-A4D2-16667E4D907C}
+	EndGlobalSection
+EndGlobal
