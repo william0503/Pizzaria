@@ -13,7 +13,8 @@ namespace Pizzaria
             {
                 var container = Global.InicializarContainer();
                 _administradorServico = container.Resolve<IAdministradorServico>();
-
+                
+                
                 _administradorServico.AutoCriarBancoDeDados();
                 _administradorServico.InserirDadosTeste();
                 

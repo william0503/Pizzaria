@@ -8,7 +8,7 @@
         Criar BD
     </h2>
     <p>
-        Criar novo Banco de Dados<br/>
+        <b>Criar novo Banco de Dados</b><br/>
         <input type="button" id="BtnCriarBD" value="Criar BD"/>
 <%--        <asp:Button ID="BtnCriarBD" runat="server" Text="Criar BD" 
             onclick="BtnCriarBD_Click" />--%>
@@ -18,20 +18,23 @@
     <script src="Scripts/jquery-1.6.4.min.js" type="text/javascript"> </script>
     <script type="text/javascript">
         $("#BtnCriarBD").click(function () {
-            var dados = { };
-            var request = $.ajax({
-                type: "POST",
-                url: "CriarBD.aspx?bdCreate=1",
-                data: dados
-            });
+            if(confirm("Deseja realmente criar um novo banco de dados? (Todos os dados anteriores serão apagados)")) {
+                var dados = {};
+                var request = $.ajax({
+                    type: "POST",
+                    url: "CriarBD.aspx?bdCreate=1",
+                    data: dados
+                });
 
-            request.done(function () {
-               alert("Banco criado com sucesso");
-            });
+                request.done(function () {
+                    alert("Banco criado com sucesso");
+                });
 
-            request.fail(function (jqXHR, textStatus) {
-                alert("Request failed: " + textStatus);
-            });
+                request.fail(function (jqXHR, textStatus) {
+                    alert("Request failed: " + textStatus);
+                });
+            }
+            
         });
 
 

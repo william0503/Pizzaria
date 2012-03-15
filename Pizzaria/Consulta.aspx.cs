@@ -1,12 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
-using System.Web.UI;
-using System.Web.UI.WebControls;
 using Pizzaria.Dominio.Entidades;
 using Pizzaria.Dominio.Servicos;
-using System.Linq;
 
 namespace Pizzaria
 {
@@ -31,7 +27,6 @@ namespace Pizzaria
             gridPizza.DataBind();
             gridIngrediente.DataBind();
             gridCardapio.DataBind();
-
         }
 
         public struct PizzaModel

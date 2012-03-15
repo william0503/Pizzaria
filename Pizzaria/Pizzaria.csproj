@@ -65,7 +65,16 @@
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
+    <Content Include="css\jquery.noty.css" />
+    <Content Include="img\alert-lines.png" />
+    <Content Include="img\closelabel.png" />
+    <Content Include="img\mitgux\alert.png" />
+    <Content Include="img\mitgux\bg.png" />
+    <Content Include="img\mitgux\close.png" />
+    <Content Include="img\mitgux\done.png" />
+    <Content Include="img\mitgux\error.png" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
+    <Content Include="Scripts\jquery.noty.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />

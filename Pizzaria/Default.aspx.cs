@@ -12,12 +12,10 @@ namespace Pizzaria
     public partial class _Default : System.Web.UI.Page
     {
         private IAdministradorServico _administradorServico;
-        private IPizzaDAO _pizzaDao;
-        private IIngredienteDAO _ingredienteDao;
-        
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            var container = InicializarContainer();
+            var container = Global.InicializarContainer();
             _administradorServico = container.Resolve<IAdministradorServico>();
             
             CarregaDropDownList();
@@ -25,7 +23,7 @@ namespace Pizzaria
             if (Request.QueryString["insertNewPizza"] != null)
             {
                 InsertNewPizza();
-                Response.Write("<script>alert('Pizza inserida com sucesso!');</script>");
+                Response.Write("Pizza inserida com sucesso!");
                 Response.End();
                 
             }
@@ -33,7 +31,7 @@ namespace Pizzaria
             if (Request.QueryString["insertNewIngrediente"] != null)
             {
                 InsertNewIngrediente();
-                Response.Write("<script>alert('Ingrediente inserido com sucesso!');</script>");
+                Response.Write("Ingrediente inserido com sucesso!");
                 CarregaDropDownList();
                 Response.End();
             }
@@ -50,19 +48,7 @@ namespace Pizzaria
             DropDownListIngrediente3.DataBind();
         }
 
-        private static WindsorContainer InicializarContainer()
-        {
-            var container = new WindsorContainer();
-
-            container.Register(Component.For<IAdministradorServico>().ImplementedBy<AdministradorServico>());
-            container.Register(Component.For<IPizzaDAO>().ImplementedBy<PizzaDAO>());
-            container.Register(Component.For<IIngredienteDAO>().ImplementedBy<IngredienteDAO>());
-            container.Register(Component.For<IBancoDadosCreator>().ImplementedBy<BancoDadosCreator>());
-            var sessionFactory = new SessionFactoryProvider();
-            container.Register(Component.For<SessionProvider>().Instance(new SessionProvider(sessionFactory)).LifeStyle.Singleton);
-            return container;
-        }
-
+        
         private void InsertNewPizza()
         {
                 string nome = Request.Form["Nome"];
@@ -71,9 +57,6 @@ namespace Pizzaria
                 int ingrediente3 = Convert.ToInt32(Request.Form["Ingrediente3"]);
 
                 _administradorServico.CriarPizza(nome, ingrediente1, ingrediente2, ingrediente3);
-
-            
-
             
         }
 
@@ -82,6 +65,7 @@ namespace Pizzaria
             string ingrediente = Request.Form["Ingrediente"];
 
             _administradorServico.CriarIngrediente(ingrediente);
+            
 
         }
 

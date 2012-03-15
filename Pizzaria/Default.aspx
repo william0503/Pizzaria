@@ -1,6 +1,7 @@
 ﻿<%@ Page Title="Home Page" Language="C#" MasterPageFile="~/Site.master" AutoEventWireup="true"
     CodeBehind="Default.aspx.cs" Inherits="Pizzaria._Default" ClientIDMode="Static" ViewStateMode="Disabled"%>
 
+
 <asp:Content ID="HeaderContent" runat="server" ContentPlaceHolderID="HeadContent">
 </asp:Content>
 <asp:Content ID="BodyContent" runat="server" ContentPlaceHolderID="MainContent">
@@ -30,15 +31,16 @@
     <br/><br/>
     <div id="divIngrediente">
     <b>Novo Ingrediente:</b>
-    <asp:TextBox ID="txtIngrediente" runat="server"></asp:TextBox>
-        <p><input ID="ButtonAddIngrediente" type="button" value="Novo Ingrediente"/></p>
+    <asp:TextBox id="txtIngrediente" runat="server"></asp:TextBox>
+        <p><input id="ButtonAddIngrediente" type="button" value="Novo Ingrediente"/></p>
     </div>
     
     <div id="divResultado"></div>
     <script src="Scripts/jquery-1.6.4.min.js" type="text/javascript"></script>
+    <script src="Scripts/jquery.noty.js" type="text/javascript"></script>
     <script type="text/javascript">
         $("#ButtonAddPizza").click(function () {
-
+            
             var dados = {
                 Nome: $("#txtNome").val(),
                 Ingrediente1: $("#DropDownListIngrediente1").val(),
@@ -52,8 +54,9 @@
                 data: dados
             });
 
-            request.done(function (data) {
-                $("#divResultado").html(data);
+            request.done(function () {
+                noty({ "text": "Pizza inserida com sucesso", "layout": "center", "type": "sucess", "textAlign": "center", "easing": "swing", "animateOpen": { "height": "toggle" }, "animateClose": { "height": "toggle" }, "speed": "500", "timeout": "5000", "closable": true, "closeOnSelfClick": true });
+                
             });
 
             request.fail(function (jqXHR, textStatus) {
@@ -65,11 +68,34 @@
 
             var dados = {
                 Ingrediente: $("#txtIngrediente").val()
+                
             };
             var request = $.ajax({
                 type: "POST",
                 url: "Default.aspx?insertNewIngrediente=1",
                 data: dados
+            });
+
+            request.done(function () {
+                noty({ "text": "Ingrediente inserido com sucesso", "layout": "center", "type": "success", "textAlign": "center", "easing": "swing", "animateOpen": { "height": "toggle" }, "animateClose": { "height": "toggle" }, "speed": "500", "timeout": "5000", "closable": true, "closeOnSelfClick": true });
+            });
+
+            request.fail(function (jqXHR, textStatus) {
+                alert("Request failed: " + textStatus);
+            });
+        });
+
+        function PesquisarIngredientes() {
+            var dados = {
+                Ingrediente: $("#txtIngrediente").val()
+
+            };
+            var request = $.ajax({
+                type: "POST",
+                url: "Default.aspx?insertNewIngrediente=1",
+                data: dados,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8"
             });
 
             request.done(function (data) {
@@ -79,6 +105,6 @@
             request.fail(function (jqXHR, textStatus) {
                 alert("Request failed: " + textStatus);
             });
-        });
+        }
     </script>
 </asp:Content>

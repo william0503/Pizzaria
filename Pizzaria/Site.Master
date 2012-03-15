@@ -5,6 +5,7 @@
 <head runat="server">
     <title></title>
     <link href="~/Styles/Site.css" rel="stylesheet" type="text/css" />
+    <link href="css/jquery.noty.css" rel="stylesheet" type="text/css"/>
     <asp:ContentPlaceHolder ID="HeadContent" runat="server">
     </asp:ContentPlaceHolder>
 </head>

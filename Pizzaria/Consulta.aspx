@@ -2,7 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
-    Pizzas
+    <b>Pizzas</b>
     <asp:GridView ID="gridPizza" runat="server" CellPadding="4" ForeColor="#333333" 
         GridLines="None">
         <AlternatingRowStyle BackColor="White" />
@@ -18,7 +18,7 @@
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <br/>
-    Ingredientes
+    <b>Ingredientes</b>
     <asp:GridView ID="gridIngrediente" runat="server" CellPadding="4" ForeColor="#333333" 
         GridLines="None">
         <AlternatingRowStyle BackColor="White" />
@@ -34,7 +34,7 @@
         <SortedDescendingHeaderStyle BackColor="#4870BE" />
     </asp:GridView>
     <br/>
-    Cardapio
+    <b>Cardapio</b>
     <asp:GridView ID="gridCardapio" runat="server" CellPadding="4" ForeColor="#333333" 
         GridLines="None">
         <AlternatingRowStyle BackColor="White" />
