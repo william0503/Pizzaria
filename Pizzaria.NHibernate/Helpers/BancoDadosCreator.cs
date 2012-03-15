@@ -1,6 +1,8 @@
-﻿namespace Pizzaria.NHibernate.Helpers
+﻿using Pizzaria.Dominio.Repositorios;
+
+namespace Pizzaria.NHibernate.Helpers
 {
-    public class BancoDadosCreator
+    public class BancoDadosCreator : IBancoDadosCreator
     {
         public void AutoCriarBancoDeDados()
         {

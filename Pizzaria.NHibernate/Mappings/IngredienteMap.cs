@@ -11,7 +11,7 @@ namespace Pizzaria.NHibernate.Mappings
 
             Map(x => x.Nome);
 
-            References(x => x.Pizza);
+            HasManyToMany(x => x.Pizzas);
         }
     }
 }

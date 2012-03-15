@@ -13,31 +13,31 @@ namespace Pizzaria {
     public partial class _Default {
         
         /// <summary>
-        /// txtIngrediente1 control.
+        /// DropDownListIngrediente1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIngrediente1;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIngrediente1;
         
         /// <summary>
-        /// txtIngrediente2 control.
+        /// DropDownListIngrediente2 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIngrediente2;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIngrediente2;
         
         /// <summary>
-        /// txtIngrediente3 control.
+        /// DropDownListIngrediente3 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtIngrediente3;
+        protected global::System.Web.UI.WebControls.DropDownList DropDownListIngrediente3;
         
         /// <summary>
         /// btIncluir control.
@@ -47,5 +47,14 @@ namespace Pizzaria {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button btIncluir;
+        
+        /// <summary>
+        /// txtIngrediente control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox txtIngrediente;
     }
 }

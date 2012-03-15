@@ -10,33 +10,33 @@
 namespace Pizzaria {
     
     
-    public partial class SiteMaster {
+    public partial class Consulta {
         
         /// <summary>
-        /// HeadContent control.
+        /// gridPizza control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder HeadContent;
+        protected global::System.Web.UI.WebControls.GridView gridPizza;
         
         /// <summary>
-        /// NavigationMenu control.
+        /// gridIngrediente control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Menu NavigationMenu;
+        protected global::System.Web.UI.WebControls.GridView gridIngrediente;
         
         /// <summary>
-        /// MainContent control.
+        /// gridCardapio control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView gridCardapio;
     }
 }

@@ -4,7 +4,7 @@ namespace Pizzaria.Dominio.Entidades
 {
     public class Pizza
     {
-        public virtual int Id { get; set; }
+        public virtual int Id { get;private set; }
         public virtual string Nome { get; set; }
         public virtual IList<Ingrediente> Ingredientes { get; set; }
 
@@ -14,8 +14,15 @@ namespace Pizzaria.Dominio.Entidades
             {
                 Ingredientes = new List<Ingrediente>();
             }
-            ingrediente.Pizza = this;
-            Ingredientes.Add(ingrediente);
+
+            if (ingrediente.Pizzas == null)
+            {
+                ingrediente.Pizzas = new List<Pizza>();
+            }
+
+            ingrediente.Pizzas.Add(this);
+            //Ingredientes.Add(ingrediente);
+            
         }
-    };
+    }
 }

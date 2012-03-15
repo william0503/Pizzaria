@@ -43,9 +43,11 @@
     <Compile Include="Entidades\Ingrediente.cs" />
     <Compile Include="Entidades\Pizza.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\IBancoDadosCreator.cs" />
     <Compile Include="Repositorios\IIngredienteDAO.cs" />
     <Compile Include="Repositorios\IPizzaDAO.cs" />
     <Compile Include="Repositorios\IRepositorio.cs" />
+    <Compile Include="Servicos\IAdministradorServico.cs" />
     <Compile Include="Servicos\IngredienteServico.cs" />
     <Compile Include="Servicos\PizzaServico.cs" />
   </ItemGroup>
