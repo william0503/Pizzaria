@@ -56,7 +56,8 @@
     <script type="text/javascript">
         $("#ButtonAddPizza").click(function () {
             //checked
-            var checked = $('input[name=chkBordaRecheada]:checked').val();
+            //var checked = $('input[name=chkBordaRecheada]:checked').val();
+            var checked = $('input[#chkBordaRecheada]:checked').val();
             var valueCheck = true;
 
             if (checked == undefined)

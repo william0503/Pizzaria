@@ -22,11 +22,6 @@ namespace Pizzaria
             DropDownListIngrediente.DataSource = _administradorServico.PesquisarIngredientes();
 
             DropDownListIngrediente.DataBind();
-
-            if (Request.QueryString["Consulta"] != null)
-            {
-                
-            }
             
         }
 
