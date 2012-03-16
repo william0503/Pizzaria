@@ -63,6 +63,7 @@ namespace Pizzaria
 
                     }
                     Nome = x.Nome;
+                    BordaRecheada = x.BordaRecheada;
                     Ingrediente = ingredientes;
                 }
                
@@ -70,6 +71,7 @@ namespace Pizzaria
 
 
             public string Nome { get; set; }
+            public bool BordaRecheada { get; set; }
             public string Ingrediente { get; set; }
         }
 

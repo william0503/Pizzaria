@@ -10,6 +10,7 @@ namespace Pizzaria.NHibernate.Mappings
             Id(x => x.Id).Column("Id").GeneratedBy.Native();
 
             Map(x => x.Nome);
+            Map(x => x.BordaRecheada);
 
             HasManyToMany(x => x.Ingredientes);
         }

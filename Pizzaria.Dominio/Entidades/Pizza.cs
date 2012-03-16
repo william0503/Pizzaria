@@ -7,6 +7,7 @@ namespace Pizzaria.Dominio.Entidades
         public virtual int Id { get;private set; }
         public virtual string Nome { get; set; }
         public virtual IList<Ingrediente> Ingredientes { get; set; }
+        public virtual bool BordaRecheada { get; set; }
 
         public virtual void AcrescentarIngrediente(Ingrediente ingrediente)
         {
@@ -21,7 +22,7 @@ namespace Pizzaria.Dominio.Entidades
             }
 
             ingrediente.Pizzas.Add(this);
-            //Ingredientes.Add(ingrediente);
+            
             
         }
     }

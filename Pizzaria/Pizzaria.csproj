@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AjaxControlToolkit, Version=4.1.51116.0, Culture=neutral, PublicKeyToken=28f01b0e84b6d53e, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
     <Reference Include="Castle.Core, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL" />
     <Reference Include="Castle.Windsor, Version=2.5.1.0, Culture=neutral, PublicKeyToken=407dd0808d44fbdc, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -60,12 +63,14 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Consulta.aspx" />
+    <Content Include="ConsultaAvancada.aspx" />
     <Content Include="CriarBD.aspx" />
     <Content Include="Account\ChangePassword.aspx" />
     <Content Include="Account\ChangePasswordSuccess.aspx" />
     <Content Include="Account\Login.aspx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="css\jquery.noty.css" />
+    <Content Include="GridConsultaAvancada.aspx" />
     <Content Include="img\alert-lines.png" />
     <Content Include="img\closelabel.png" />
     <Content Include="img\mitgux\alert.png" />
@@ -75,6 +80,8 @@
     <Content Include="img\mitgux\error.png" />
     <Content Include="Scripts\jquery-1.6.4.min.js" />
     <Content Include="Scripts\jquery.noty.js" />
+    <Content Include="Scripts\jquery.quicksearch.js" />
+    <Content Include="Scripts\NotyAlert.js" />
     <Content Include="Styles\Site.css" />
     <Content Include="Default.aspx" />
     <Content Include="Global.asax" />
@@ -96,6 +103,13 @@
     </Compile>
     <Compile Include="Consulta.aspx.designer.cs">
       <DependentUpon>Consulta.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ConsultaAvancada.aspx.cs">
+      <DependentUpon>ConsultaAvancada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ConsultaAvancada.aspx.designer.cs">
+      <DependentUpon>ConsultaAvancada.aspx</DependentUpon>
     </Compile>
     <Compile Include="CriarBD.aspx.cs">
       <DependentUpon>CriarBD.aspx</DependentUpon>
@@ -141,6 +155,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="GridConsultaAvancada.aspx.cs">
+      <DependentUpon>GridConsultaAvancada.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GridConsultaAvancada.aspx.designer.cs">
+      <DependentUpon>GridConsultaAvancada.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">

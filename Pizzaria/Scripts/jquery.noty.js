@@ -212,3 +212,5 @@
 function noty(options) {
 	jQuery.fn.noty(options);
 }
+
+

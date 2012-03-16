@@ -40,15 +40,6 @@ namespace Pizzaria {
         protected global::System.Web.UI.WebControls.DropDownList DropDownListIngrediente3;
         
         /// <summary>
-        /// btIncluir control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btIncluir;
-        
-        /// <summary>
         /// txtIngrediente control.
         /// </summary>
         /// <remarks>

@@ -1,4 +1,6 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Web.Services;
 using Pizzaria.Dominio.Entidades;
 using Pizzaria.Dominio.Repositorios;
 using Pizzaria.Dominio.Servicos;
@@ -23,19 +25,19 @@ namespace Pizzaria
             if (Request.QueryString["insertNewPizza"] != null)
             {
                 InsertNewPizza();
-                Response.Write("Pizza inserida com sucesso!");
-                Response.End();
+                
                 
             }
             
             if (Request.QueryString["insertNewIngrediente"] != null)
             {
-                InsertNewIngrediente();
-                Response.Write("Ingrediente inserido com sucesso!");
-                CarregaDropDownList();
-                Response.End();
+                
+                    InsertNewIngrediente();
+                    
+                
             }
         }
+
 
         private void CarregaDropDownList()
         {
@@ -46,8 +48,18 @@ namespace Pizzaria
             DropDownListIngrediente1.DataBind();
             DropDownListIngrediente2.DataBind();
             DropDownListIngrediente3.DataBind();
-        }
 
+        }
+        
+        [WebMethod]
+        public static IList<Ingrediente> CarregaDropDownListAjax()
+        {
+            var container = Global.InicializarContainer();
+            var administradorServico = container.Resolve<IAdministradorServico>();
+            var ingredientes = administradorServico.PesquisarIngredientes();
+            return ingredientes;
+            
+        }
         
         private void InsertNewPizza()
         {
@@ -55,8 +67,8 @@ namespace Pizzaria
                 int ingrediente1 = Convert.ToInt32(Request.Form["Ingrediente1"]);
                 int ingrediente2 = Convert.ToInt32(Request.Form["Ingrediente2"]);
                 int ingrediente3 = Convert.ToInt32(Request.Form["Ingrediente3"]);
-
-                _administradorServico.CriarPizza(nome, ingrediente1, ingrediente2, ingrediente3);
+                bool bordaRecheada = Convert.ToBoolean(Request.Form["Borda"]);
+                _administradorServico.CriarPizza(nome, ingrediente1, ingrediente2, ingrediente3,bordaRecheada);
             
         }
 

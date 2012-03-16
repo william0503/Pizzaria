@@ -13,7 +13,9 @@ namespace Pizzaria.Dominio.Servicos
         IList<Pizza> PesquisarPizzas();
         void CriarIngrediente(string nome);
         IList<Ingrediente> PesquisarIngredientes();
-        void CriarPizza(string nome, int ingrediente1, int ingrediente2, int ingrediente3);
+        void CriarPizza(string nome, int ingrediente1, int ingrediente2, int ingrediente3, bool borda);
+        Ingrediente PesquisarIngredientesPorId(int id);
+
     }
 
     public class AdministradorServico : IAdministradorServico
@@ -21,6 +23,7 @@ namespace Pizzaria.Dominio.Servicos
         private IPizzaDAO _pizzaDao;
         private IIngredienteDAO _ingredienteDao;
         private readonly IBancoDadosCreator _bancoDadosCreator;
+
 
         public AdministradorServico(IPizzaDAO pizzaDao, IIngredienteDAO ingredienteDao, IBancoDadosCreator bancoDadosCreator)
         {
@@ -52,13 +55,18 @@ namespace Pizzaria.Dominio.Servicos
         {
             return _ingredienteDao.GetAll();
         }
+        public Ingrediente PesquisarIngredientesPorId(int id)
+        {
+            return _ingredienteDao.Get(id);
+        }
 
+        
 
-
-        public void CriarPizza(string nome, int pIngrediente1, int pIngrediente2, int pIngrediente3)
+        public void CriarPizza(string nome, int pIngrediente1, int pIngrediente2, int pIngrediente3, bool borda)
         {
             var pizza = new Pizza();
             pizza.Nome = nome;
+            pizza.BordaRecheada = borda;
             _pizzaDao.Save(pizza);
 
             var ingrediente1 = _ingredienteDao.Get(pIngrediente1);
@@ -78,6 +86,7 @@ namespace Pizzaria.Dominio.Servicos
         {
             var pizza = new Pizza();
             pizza.Nome = "Muçarela";
+            pizza.BordaRecheada = true;
             _pizzaDao.Save(pizza);
 
             var pIngrediente = new Ingrediente();
